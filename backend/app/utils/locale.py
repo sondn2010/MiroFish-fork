@@ -20,16 +20,56 @@ for filename in os.listdir(_locales_dir):
             _translations[locale_name] = json.load(f)
 
 
+_LOCALE_ALIASES = {
+    'zh-cn': 'zh',
+    'zh-hans': 'zh',
+    'zh-hant': 'zh',
+    'cn': 'zh',
+    'china': 'zh',
+    'en-us': 'en',
+    'en-gb': 'en',
+    'vi-vn': 'vi'
+}
+
+
+def _normalize_locale(locale: str) -> str:
+    if not locale:
+        return 'zh'
+
+    # Accept full Accept-Language values such as "en-US,en;q=0.9"
+    token = locale.split(',')[0].strip().lower()
+    token = token.split(';')[0].strip()
+
+    if token in _LOCALE_ALIASES:
+        return _LOCALE_ALIASES[token]
+
+    base = token.split('-')[0]
+    if base in _LOCALE_ALIASES:
+        return _LOCALE_ALIASES[base]
+
+    return token
+
+
 def set_locale(locale: str):
     """Set locale for current thread. Call at the start of background threads."""
-    _thread_local.locale = locale
+    _thread_local.locale = _normalize_locale(locale)
 
 
 def get_locale() -> str:
     if has_request_context():
         raw = request.headers.get('Accept-Language', 'zh')
-        return raw if raw in _translations else 'zh'
-    return getattr(_thread_local, 'locale', 'zh')
+        normalized = _normalize_locale(raw)
+        if normalized in _languages:
+            return normalized
+        if normalized in _translations:
+            return normalized
+        return 'zh'
+
+    thread_locale = getattr(_thread_local, 'locale', 'zh')
+    normalized = _normalize_locale(thread_locale)
+    if normalized in _languages or normalized in _translations:
+        return normalized
+    return 'zh'
 
 
 def t(key: str, **kwargs) -> str:

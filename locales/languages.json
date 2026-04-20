@@ -7,6 +7,14 @@
     "label": "English",
     "llmInstruction": "Please respond in English."
   },
+  "vi": {
+    "label": "Tiếng Việt",
+    "llmInstruction": "Vui lòng trả lời bằng tiếng Việt."
+  },
+  "china": {
+    "label": "China (中文)",
+    "llmInstruction": "请使用中文回答。"
+  },
   "es": {
     "label": "Español",
     "llmInstruction": "Por favor, responde en español."
