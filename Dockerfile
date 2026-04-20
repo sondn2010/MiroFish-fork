@@ -21,10 +21,11 @@ COPY backend/pyproject.toml backend/uv.lock ./backend/
 # 安装依赖（Node + Python）
 RUN npm ci \
   && npm ci --prefix frontend \
+  # 生产镜像仅安装运行时依赖，减少体积
   && cd backend && uv sync --frozen --no-dev \
   && uv pip install --python .venv/bin/python --no-deps graphiti-core==0.28.2 \
   && npm cache clean --force \
-  && rm -rf /root/.cache /tmp/*
+  && rm -rf /root/.cache
 
 # 复制项目源码
 COPY . .
