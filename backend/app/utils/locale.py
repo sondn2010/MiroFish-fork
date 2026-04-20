@@ -2,6 +2,7 @@ import json
 import os
 import threading
 from flask import request, has_request_context
+from ..config import Config
 
 _thread_local = threading.local()
 
@@ -50,26 +51,36 @@ def _normalize_locale(locale: str) -> str:
     return token
 
 
+def _get_default_locale() -> str:
+    configured = getattr(Config, 'SIMULATION_LANGUAGE', 'zh')
+    normalized = _normalize_locale(configured)
+    if normalized in _languages or normalized in _translations:
+        return normalized
+    return 'zh'
+
+
 def set_locale(locale: str):
     """Set locale for current thread. Call at the start of background threads."""
     _thread_local.locale = _normalize_locale(locale)
 
 
 def get_locale() -> str:
+    default_locale = _get_default_locale()
+
     if has_request_context():
-        raw = request.headers.get('Accept-Language', 'zh')
+        raw = request.headers.get('Accept-Language', default_locale)
         normalized = _normalize_locale(raw)
         if normalized in _languages:
             return normalized
         if normalized in _translations:
             return normalized
-        return 'zh'
+        return default_locale
 
-    thread_locale = getattr(_thread_local, 'locale', 'zh')
+    thread_locale = getattr(_thread_local, 'locale', default_locale)
     normalized = _normalize_locale(thread_locale)
     if normalized in _languages or normalized in _translations:
         return normalized
-    return 'zh'
+    return default_locale
 
 
 def t(key: str, **kwargs) -> str:
