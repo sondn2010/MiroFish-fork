@@ -11,6 +11,12 @@ created: 2026-04-23
 
 # Translate Chinese Text to Vietnamese
 
+## Cross-Plan Dependencies
+
+| Relationship | Plan | Status | Note |
+|---|---|---|---|
+| Shared files | [260424-1045 Sardines Rebrand](../260424-1045-sardines-rebrand/plan.md) | pending | Both touch `vi.json` brand keys — run this plan first, rebrand Phase 3 last |
+
 ## Goal
 
 Deliver a first-class Vietnamese experience in MiroFish: complete `locales/vi.json`, translated README-VI.md, cleaned Chinese comments where value-add, and verified runtime routing through existing `locale.py` + `useI18n` pipeline.
