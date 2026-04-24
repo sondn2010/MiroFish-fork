@@ -320,7 +320,7 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .step-num {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 20px;
   font-weight: 700;
   color: #E0E0E0;
@@ -351,7 +351,7 @@ watch(() => props.systemLogs.length, () => {
 .badge.pending { background: #F5F5F5; color: #999; }
 
 .api-note {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   color: #999;
   margin-bottom: 8px;
@@ -396,7 +396,7 @@ watch(() => props.systemLogs.length, () => {
   border-radius: 4px;
   font-size: 11px;
   color: #333;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   transition: all 0.2s;
 }
 
@@ -458,7 +458,7 @@ watch(() => props.systemLogs.length, () => {
 .detail-name {
     font-size: 14px;
     font-weight: 700;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-body);
 }
 
 .close-btn {
@@ -519,7 +519,7 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .attr-name {
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-body);
     font-weight: 600;
     color: #000;
 }
@@ -558,7 +558,7 @@ watch(() => props.systemLogs.length, () => {
     padding: 6px;
     background: #F5F5F5;
     border-radius: 4px;
-    font-family: 'JetBrains Mono', monospace;
+    font-family: var(--font-body);
 }
 
 .conn-node {
@@ -589,7 +589,7 @@ watch(() => props.systemLogs.length, () => {
   font-size: 20px;
   font-weight: 700;
   color: #000;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
 }
 
 .stat-label {
@@ -648,7 +648,7 @@ watch(() => props.systemLogs.length, () => {
   background: #000;
   color: #DDD;
   padding: 16px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   border-top: 1px solid #222;
   flex-shrink: 0;
 }

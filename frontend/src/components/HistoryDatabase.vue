@@ -634,7 +634,7 @@ onUnmounted(() => {
   justify-content: center;
   gap: 24px;
   margin-bottom: 24px;
-  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-family: var(--font-body);
   padding: 0 40px;
 }
 
@@ -695,7 +695,7 @@ onUnmounted(() => {
   margin-bottom: 12px;
   padding-bottom: 12px;
   border-bottom: 1px solid #F3F4F6;
-  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.7rem;
 }
 
@@ -778,7 +778,7 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   padding: 3px 6px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.6rem;
   color: #6B7280;
   background: rgba(255, 255, 255, 0.5);
@@ -810,7 +810,7 @@ onUnmounted(() => {
   height: 16px;
   padding: 0 4px;
   border-radius: 2px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.55rem;
   font-weight: 600;
   line-height: 1;
@@ -857,7 +857,7 @@ onUnmounted(() => {
 }
 
 .empty-file-text {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.7rem;
   letter-spacing: 0.5px;
 }
@@ -921,7 +921,7 @@ onUnmounted(() => {
   align-items: center;
   padding-top: 12px;
   border-top: 1px solid #F3F4F6;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.65rem;
   color: #9CA3AF;
   font-weight: 500;
@@ -1085,7 +1085,7 @@ onUnmounted(() => {
 }
 
 .modal-id {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 1rem;
   font-weight: 600;
   color: #111827;
@@ -1096,7 +1096,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 600;
   padding: 4px 8px;
@@ -1109,7 +1109,7 @@ onUnmounted(() => {
 .modal-progress.not-started { color: #9CA3AF; background: #F3F4F6; }
 
 .modal-create-time {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.75rem;
   color: #9CA3AF;
   letter-spacing: 0.3px;
@@ -1149,7 +1149,7 @@ onUnmounted(() => {
 }
 
 .modal-label {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.75rem;
   color: #6B7280;
   text-transform: uppercase;
@@ -1247,7 +1247,7 @@ onUnmounted(() => {
 }
 
 .divider-text {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.7rem;
   color: #9CA3AF;
   letter-spacing: 2px;
@@ -1292,7 +1292,7 @@ onUnmounted(() => {
 }
 
 .btn-step {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.6rem;
   font-weight: 500;
   color: #9CA3AF;
@@ -1307,7 +1307,7 @@ onUnmounted(() => {
 }
 
 .btn-text {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.5px;
@@ -1332,7 +1332,7 @@ onUnmounted(() => {
 }
 
 .hint-text {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.7rem;
   color: #9CA3AF;
   letter-spacing: 0.3px;

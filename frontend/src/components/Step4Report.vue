@@ -2459,7 +2459,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 .section-number {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 16px;
   color: #9CA3AF; /* 深灰色，不随状态变化 */
   font-weight: 500;
@@ -2539,7 +2539,7 @@ watch(() => props.reportId, (newId) => {
   background: #F9FAFB;
   padding: 12px;
   border-radius: 6px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 12px;
   overflow-x: auto;
   margin: 1em 0;
@@ -2713,7 +2713,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 .mono {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
 }
 
 /* Workflow Overview */
@@ -3009,7 +3009,7 @@ watch(() => props.reportId, (newId) => {
 .action-time {
   font-size: 11px;
   color: #9CA3AF;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
 }
 
 .timeline-body {
@@ -3042,7 +3042,7 @@ watch(() => props.reportId, (newId) => {
   background: #F3F4F6;
   padding: 2px 8px;
   border-radius: 10px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
 }
 
 /* Timeline Body Elements */
@@ -3237,7 +3237,7 @@ watch(() => props.reportId, (newId) => {
 
 .tool-params pre {
   margin: 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 11px;
   color: #4B5563;
   white-space: pre-wrap;
@@ -3293,7 +3293,7 @@ watch(() => props.reportId, (newId) => {
 .result-size {
   font-size: 10px;
   color: #6B7280;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
 }
 
 .result-raw {
@@ -3304,7 +3304,7 @@ watch(() => props.reportId, (newId) => {
 
 .result-raw pre {
   margin: 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 11px;
   white-space: pre-wrap;
   word-break: break-word;
@@ -3317,7 +3317,7 @@ watch(() => props.reportId, (newId) => {
 
 .raw-preview {
   margin: 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 11px;
   white-space: pre-wrap;
   word-break: break-word;
@@ -3378,7 +3378,7 @@ watch(() => props.reportId, (newId) => {
 
 .llm-content pre {
   margin: 0;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 11px;
   white-space: pre-wrap;
   word-break: break-word;
@@ -3490,7 +3490,7 @@ watch(() => props.reportId, (newId) => {
   font-size: 20px;
   font-weight: 700;
   color: #111827;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
 }
 
 :deep(.stat-box .stat-label) {
@@ -3707,7 +3707,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.interview-display .header-title) {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
   color: #111827;
@@ -3730,7 +3730,7 @@ watch(() => props.reportId, (newId) => {
   font-size: 14px;
   font-weight: 600;
   color: #4F46E5;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
 }
 
 :deep(.interview-display .stat-label) {
@@ -3747,7 +3747,7 @@ watch(() => props.reportId, (newId) => {
 :deep(.interview-display .stat-size) {
   font-size: 11px;
   color: #9CA3AF;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
 }
 
 :deep(.interview-display .header-topic) {
@@ -3956,7 +3956,7 @@ watch(() => props.reportId, (newId) => {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   font-weight: 700;
   border-radius: 4px;
@@ -4255,7 +4255,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.insight-header .stat-value) {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-weight: 700;
   color: #7C3AED;
 }
@@ -4271,7 +4271,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.insight-header .stat-size) {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   color: #9CA3AF;
 }
@@ -4389,7 +4389,7 @@ watch(() => props.reportId, (newId) => {
   justify-content: center;
   background: #E5E7EB;
   border-radius: 50%;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   font-weight: 700;
   color: #6B7280;
@@ -4551,7 +4551,7 @@ watch(() => props.reportId, (newId) => {
   padding: 2px 6px;
   background: #7C3AED;
   border-radius: 4px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   font-weight: 700;
   color: #FFFFFF;
@@ -4640,7 +4640,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.panorama-header .stat-value) {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-weight: 700;
   color: #2563EB;
 }
@@ -4656,7 +4656,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.panorama-header .stat-size) {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   color: #9CA3AF;
 }
@@ -4766,7 +4766,7 @@ watch(() => props.reportId, (newId) => {
   justify-content: center;
   background: #E5E7EB;
   border-radius: 50%;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   font-weight: 700;
   color: #6B7280;
@@ -4794,7 +4794,7 @@ watch(() => props.reportId, (newId) => {
   font-size: 10px;
   color: #9CA3AF;
   margin-bottom: 4px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
 }
 
 :deep(.panorama-display .fact-text) {
@@ -4872,7 +4872,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.quicksearch-header .stat-value) {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-weight: 700;
   color: #EA580C;
 }
@@ -4888,7 +4888,7 @@ watch(() => props.reportId, (newId) => {
 }
 
 :deep(.quicksearch-header .stat-size) {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   color: #9CA3AF;
 }
@@ -5002,7 +5002,7 @@ watch(() => props.reportId, (newId) => {
   justify-content: center;
   background: #E5E7EB;
   border-radius: 50%;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   font-weight: 700;
   color: #6B7280;
@@ -5107,7 +5107,7 @@ watch(() => props.reportId, (newId) => {
   background: #000;
   color: #DDD;
   padding: 16px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   border-top: 1px solid #222;
   flex-shrink: 0;
 }

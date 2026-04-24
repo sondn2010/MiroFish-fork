@@ -1089,7 +1089,7 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   background: #FAFAFA;
-  font-family: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
+  font-family: var(--font-display);
 }
 
 .scroll-container {
@@ -1131,7 +1131,7 @@ onUnmounted(() => {
 }
 
 .step-num {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 20px;
   font-weight: 700;
   color: #E0E0E0;
@@ -1166,7 +1166,7 @@ onUnmounted(() => {
 }
 
 .api-note {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   color: #999;
   margin-bottom: 8px;
@@ -1266,7 +1266,7 @@ onUnmounted(() => {
 }
 
 .info-value.mono {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 12px;
 }
 
@@ -1289,7 +1289,7 @@ onUnmounted(() => {
   font-size: 20px;
   font-weight: 700;
   color: #000;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
 }
 
 .stat-label {
@@ -1372,7 +1372,7 @@ onUnmounted(() => {
 }
 
 .profile-username {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 11px;
   color: #999;
 }
@@ -1454,7 +1454,7 @@ onUnmounted(() => {
 }
 
 .config-block-badge {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 11px;
   background: #F1F5F9;
   color: #475569;
@@ -1484,7 +1484,7 @@ onUnmounted(() => {
 }
 
 .config-item-value {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 16px;
   font-weight: 600;
   color: #1E293B;
@@ -1515,14 +1515,14 @@ onUnmounted(() => {
 }
 
 .period-hours {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 11px;
   color: #475569;
   flex: 1;
 }
 
 .period-multiplier {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 600;
   color: #6366F1;
@@ -1584,7 +1584,7 @@ onUnmounted(() => {
 }
 
 .agent-id {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   color: #94A3B8;
 }
@@ -1674,7 +1674,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   margin-top: 4px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 9px;
   color: #94A3B8;
 }
@@ -1704,7 +1704,7 @@ onUnmounted(() => {
 }
 
 .param-item .param-value {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   color: #475569;
@@ -1783,7 +1783,7 @@ onUnmounted(() => {
 }
 
 .param-value {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 12px;
   font-weight: 600;
   color: #1E293B;
@@ -1863,7 +1863,7 @@ onUnmounted(() => {
 }
 
 .modal-username {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 13px;
   color: #999;
 }
@@ -1937,7 +1937,7 @@ onUnmounted(() => {
 }
 
 .info-value.mbti {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   color: #FF5722;
 }
 
@@ -2056,7 +2056,7 @@ onUnmounted(() => {
   background: #000;
   color: #DDD;
   padding: 16px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   border-top: 1px solid #222;
   flex-shrink: 0;
 }
@@ -2257,7 +2257,7 @@ onUnmounted(() => {
 
 .post-id,
 .post-username {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   color: #666;
   line-height: 1;
@@ -2307,7 +2307,7 @@ onUnmounted(() => {
 }
 
 .desc-highlight {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-weight: 600;
   color: #1E293B;
   background: #F1F5F9;
@@ -2394,7 +2394,7 @@ onUnmounted(() => {
 }
 
 .val-num {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 24px;
   font-weight: 700;
   color: #000;
@@ -2407,7 +2407,7 @@ onUnmounted(() => {
 }
 
 .slider-meta-info {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 11px;
   color: #64748B;
   background: #F1F5F9;
@@ -2459,7 +2459,7 @@ onUnmounted(() => {
   display: flex;
   justify-content: space-between;
   margin-top: 8px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   color: #94A3B8;
   position: relative;
@@ -2527,7 +2527,7 @@ onUnmounted(() => {
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 11px;
   font-weight: 500;
   color: #64748B;

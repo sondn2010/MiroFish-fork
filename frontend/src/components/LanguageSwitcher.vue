@@ -63,7 +63,7 @@ onUnmounted(() => {
 .language-switcher {
   position: relative;
   display: inline-block;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
 }
 
 /* Light theme (default - for white header backgrounds) */
@@ -72,7 +72,7 @@ onUnmounted(() => {
   color: #333;
   border: 1px solid #CCC;
   padding: 4px 12px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 0.8rem;
   cursor: pointer;
   display: flex;

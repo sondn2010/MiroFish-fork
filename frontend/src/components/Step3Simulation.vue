@@ -705,7 +705,7 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   background: #FFFFFF;
-  font-family: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
+  font-family: var(--font-display);
   overflow: hidden;
 }
 
@@ -1151,7 +1151,7 @@ onUnmounted(() => {
 }
 
 .search-query {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   background: #F0F0F0;
   padding: 0 4px;
   border-radius: 2px;
@@ -1163,7 +1163,7 @@ onUnmounted(() => {
   justify-content: flex-end;
   font-size: 10px;
   color: #BBB;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
 }
 
 /* Waiting State */
@@ -1215,7 +1215,7 @@ onUnmounted(() => {
   background: #000;
   color: #DDD;
   padding: 16px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   border-top: 1px solid #222;
   flex-shrink: 0;
 }
@@ -1251,7 +1251,7 @@ onUnmounted(() => {
 
 .log-time { color: #555; min-width: 75px; }
 .log-msg { color: #BBB; word-break: break-all; }
-.mono { font-family: 'JetBrains Mono', monospace; }
+.mono { font-family: var(--font-body); }
 
 /* Loading spinner for button */
 .loading-spinner-small {

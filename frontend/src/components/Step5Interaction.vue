@@ -973,7 +973,7 @@ watch(() => props.simulationId, (newId) => {
 
 /* Utility Classes */
 .mono {
-  font-family: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Consolas', monospace;
+  font-family: var(--font-body), 'SF Mono', 'Monaco', 'Consolas', monospace;
 }
 
 /* Main Split Layout */
@@ -1122,7 +1122,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .section-number {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 16px;
   color: #E5E7EB;
   font-weight: 500;
@@ -1210,7 +1210,7 @@ watch(() => props.simulationId, (newId) => {
   background: #F9FAFB;
   padding: 12px;
   border-radius: 6px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 12px;
   overflow-x: auto;
   margin: 1em 0;
@@ -1353,7 +1353,7 @@ watch(() => props.simulationId, (newId) => {
 }
 
 .action-bar-subtitle.mono {
-  font-family: 'JetBrains Mono', 'SF Mono', monospace;
+  font-family: var(--font-body);
 }
 
 .action-bar-tabs {
@@ -2555,13 +2555,13 @@ watch(() => props.simulationId, (newId) => {
 }
 
 :deep(.code-block code) {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 13px;
   color: #E5E7EB;
 }
 
 :deep(.inline-code) {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 13px;
   background: #F3F4F6;
   padding: 2px 6px;

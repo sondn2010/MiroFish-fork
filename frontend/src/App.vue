@@ -15,11 +15,11 @@
 }
 
 #app {
-  font-family: 'JetBrains Mono', 'Space Grotesk', 'Noto Sans SC', monospace;
+  font-family: var(--font-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #000000;
-  background-color: #ffffff;
+  color: var(--md-on-surface);
+  background-color: var(--md-surface);
 }
 
 /* 滚动条样式 */
@@ -29,15 +29,15 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--md-surface-container-low);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #000000;
+  background: var(--md-on-surface);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #333333;
+  background: var(--md-on-surface-variant);
 }
 
 /* 全局按钮样式 */

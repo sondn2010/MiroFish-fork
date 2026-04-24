@@ -1112,7 +1112,7 @@ input:checked + .slider:before {
 }
 
 .detail-value.uuid-text {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 11px;
   color: #666;
 }
@@ -1191,7 +1191,7 @@ input:checked + .slider:before {
   background: #F8F8F8;
   border: 1px solid #E8E8E8;
   border-radius: 6px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-size: 10px;
   color: #666;
   word-break: break-all;

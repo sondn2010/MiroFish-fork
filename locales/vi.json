@@ -26,8 +26,8 @@
     "files": "tệp"
   },
   "meta": {
-    "title": "MiroFish - Dự đoán Mọi Thứ",
-    "description": "MiroFish - Hệ Thống Mô Phỏng Dư Luận Mạng Xã Hội"
+    "title": "Sardines - Dự đoán Mọi Thứ",
+    "description": "Sardines - Hệ Thống Mô Phỏng Dư Luận Mạng Xã Hội"
   },
   "nav": {
     "visitGithub": "Truy cập trang Github của chúng tôi"
@@ -38,7 +38,7 @@
     "heroTitle1": "Tải lên bất kỳ báo cáo",
     "heroTitle2": "Dự đoán tương lai ngay lập tức",
     "heroDesc": "Chỉ với một đoạn văn bản, {brand} có thể dựa trên những hạt nhân thực tế bên trong, tự động tạo ra một thế giới song song gồm tối đa {agentScale}. Thông qua góc nhìn thượng đế để chèn các biến, hãy tìm kiếm {optimalSolution} trong tương tác nhóm phức tạp dưới môi trường động",
-    "heroDescBrand": "MiroFish",
+    "heroDescBrand": "Sardines",
     "heroDescAgentScale": "Agent quy mô hàng triệu",
     "heroDescOptimalSolution": "\"Giải pháp tối ưu cục bộ\"",
     "slogan": "Cho phép Agents dự tập tương lai, để quyết định chiến thắng sau hàng trăm trận",
@@ -67,7 +67,7 @@
     "inputParams": "Tham số đầu vào",
     "simulationPrompt": ">_ 02 / Lời nhắc mô phỏng",
     "promptPlaceholder": "// Nhập nhu cầu mô phỏng hoặc dự đoán bằng ngôn ngữ tự nhiên (ví dụ: nếu Đại học Vũ Hán công bố hủy bỏ xử phạt của Tiêu nào, sẽ gây ra xu hướng dư luận gì)",
-    "engineBadge": "Công cụ: MiroFish-V1.0",
+    "engineBadge": "Công cụ: Sardines-V1.0",
     "startEngine": "Khởi động công cụ",
     "initializing": "Đang khởi tạo..."
   },
@@ -145,7 +145,7 @@
     "setupComplete": "Thiết lập hoàn tất",
     "setupCompleteDesc": "Môi trường mô phỏng đã sẵn sàng, có thể bắt đầu chạy mô phỏng",
     "roundsConfig": "Cấu hình vòng mô phỏng",
-    "roundsConfigDesc": "MiroFish tự động lên kế hoạch giả lập thực tế {hours} giờ, mỗi vòng đại diện cho {minutesPerRound} phút thời gian trôi qua",
+    "roundsConfigDesc": "Sardines tự động lên kế hoạch giả lập thực tế {hours} giờ, mỗi vòng đại diện cho {minutesPerRound} phút thời gian trôi qua",
     "customToggle": "Tùy chỉnh",
     "roundsUnit": "vòng",
     "estimatedDuration": "Nếu quy mô Agent là 100: dự kiến mất khoảng {minutes} phút",
@@ -257,7 +257,7 @@
     "selectChatTarget": "Chọn đối tượng trò chuyện",
     "sendSurvey": "Gửi khảo sát đến thế giới",
     "reportAgentChat": "Report Agent - Trò chuyện",
-    "reportAgentDesc": "Phiên bản trò chuyện nhanh của agent tạo báo cáo, có thể gọi 4 công cụ chuyên nghiệp, sở hữu bộ nhớ hoàn chỉnh của MiroFish",
+    "reportAgentDesc": "Phiên bản trò chuyện nhanh của agent tạo báo cáo, có thể gọi 4 công cụ chuyên nghiệp, sở hữu bộ nhớ hoàn chỉnh của Sardines",
     "toolInsightForge": "InsightForge - Quy kết sâu",
     "toolInsightForgeDesc": "Căn chỉnh dữ liệu hạt nhân thực tế của thế giới thực với trạng thái môi trường mô phỏng, kết hợp cơ chế Bộ nhớ Toàn cục/Cục bộ, cung cấp phân tích quy kết sâu xuyên thời gian",
     "toolPanoramaSearch": "PanoramaSearch - Theo dõi toàn cảnh",

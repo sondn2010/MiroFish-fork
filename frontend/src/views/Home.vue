@@ -2,10 +2,10 @@
   <div class="home-container">
     <!-- 顶部导航栏 -->
     <nav class="navbar">
-      <div class="nav-brand">MIROFISH</div>
+      <div class="nav-brand">SARDINES</div>
       <div class="nav-links">
         <LanguageSwitcher />
-        <a href="https://github.com/666ghj/MiroFish" target="_blank" class="github-link">
+        <a href="https://github.com/666ghj/Sardines" target="_blank" class="github-link">
           {{ $t('nav.visitGithub') }} <span class="arrow">↗</span>
         </a>
       </div>
@@ -44,7 +44,7 @@
         <div class="hero-right">
           <!-- Logo 区域 -->
           <div class="logo-container">
-            <img src="../assets/logo/MiroFish_logo_left.jpeg" alt="MiroFish Logo" class="hero-logo" />
+            <img src="../assets/logo/sardines-logo.png" alt="Sardines Logo" class="hero-logo" />
           </div>
           
           <button class="scroll-down-btn" @click="scrollToBottom">
@@ -312,46 +312,37 @@ const startSimulation = () => {
 </script>
 
 <style scoped>
-/* 全局变量与重置 */
-:root {
-  --black: #000000;
-  --white: #FFFFFF;
-  --orange: #FF4500;
-  --gray-light: #F5F5F5;
-  --gray-text: #666666;
-  --border: #E5E5E5;
-  /* 
-    使用 Space Grotesk 作为主要标题字体，JetBrains Mono 作为代码/标签字体
-    确保已在 index.html 引入这些 Google Fonts 
-  */
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-sans: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
-  --font-cn: 'Noto Sans SC', system-ui, sans-serif;
-}
-
 .home-container {
   min-height: 100vh;
-  background: var(--white);
-  font-family: var(--font-sans);
-  color: var(--black);
+  background: var(--md-surface);
+  font-family: var(--font-body);
+  color: var(--md-on-surface);
 }
 
-/* 顶部导航 */
+/* 顶部导航 — glassmorphism */
 .navbar {
   height: 60px;
-  background: var(--black);
-  color: var(--white);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  color: var(--md-on-surface);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
+  box-shadow: 0 2px 24px rgba(25, 28, 32, 0.04);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .nav-brand {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: var(--tracking-display);
   font-size: 1.2rem;
+  text-transform: uppercase;
+  color: var(--md-primary);
 }
 
 .nav-links {
@@ -361,9 +352,9 @@ const startSimulation = () => {
 }
 
 .github-link {
-  color: var(--white);
+  color: var(--md-on-surface-variant);
   text-decoration: none;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 500;
   display: flex;
@@ -395,9 +386,26 @@ const startSimulation = () => {
   position: relative;
 }
 
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 60%;
+  aspect-ratio: 1;
+  background-image: url('@/assets/logo/sardines-logo.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.05;
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero-left {
   flex: 1;
   padding-right: 60px;
+  position: relative;
+  z-index: 1;
 }
 
 .tag-row {
@@ -405,36 +413,36 @@ const startSimulation = () => {
   align-items: center;
   gap: 15px;
   margin-bottom: 25px;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.8rem;
 }
 
 .orange-tag {
-  background: var(--orange);
-  color: var(--white);
+  background: var(--gradient-cta);
+  color: var(--md-on-primary);
   padding: 4px 10px;
   font-weight: 700;
-  letter-spacing: 1px;
+  letter-spacing: var(--tracking-label);
   font-size: 0.75rem;
+  text-transform: uppercase;
+  border-radius: var(--round-four);
 }
 
 .version-text {
-  color: #999;
+  color: var(--md-outline);
   font-weight: 500;
   letter-spacing: 0.5px;
 }
 
 .main-title {
-  font-size: 4.5rem;
-  line-height: 1.2;
-  font-weight: 500;
+  font: var(--type-display-lg);
+  letter-spacing: var(--tracking-display);
   margin: 0 0 40px 0;
-  letter-spacing: -2px;
-  color: var(--black);
+  color: var(--md-on-surface);
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #000000 0%, #444444 100%);
+  background: var(--gradient-cta);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -443,7 +451,7 @@ const startSimulation = () => {
 .hero-desc {
   font-size: 1.05rem;
   line-height: 1.8;
-  color: var(--gray-text);
+  color: var(--md-on-surface-variant);
   max-width: 640px;
   margin-bottom: 50px;
   font-weight: 400;
@@ -455,38 +463,38 @@ const startSimulation = () => {
 }
 
 .highlight-bold {
-  color: var(--black);
+  color: var(--md-on-surface);
   font-weight: 700;
 }
 
 .highlight-orange {
-  color: var(--orange);
+  color: var(--md-primary);
   font-weight: 700;
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
 }
 
 .highlight-code {
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--md-surface-container);
   padding: 2px 6px;
-  border-radius: 2px;
-  font-family: var(--font-mono);
+  border-radius: var(--round-four);
+  font-family: var(--font-body);
   font-size: 0.9em;
-  color: var(--black);
+  color: var(--md-on-surface);
   font-weight: 600;
 }
 
 .slogan-text {
   font-size: 1.2rem;
-  font-weight: 520;
-  color: var(--black);
+  font-weight: 500;
+  color: var(--md-on-surface);
   letter-spacing: 1px;
-  border-left: 3px solid var(--orange);
+  border-left: 3px solid var(--md-primary);
   padding-left: 15px;
   margin-top: 20px;
 }
 
 .blinking-cursor {
-  color: var(--orange);
+  color: var(--md-primary);
   animation: blink 1s step-end infinite;
   font-weight: 700;
 }
@@ -499,7 +507,8 @@ const startSimulation = () => {
 .decoration-square {
   width: 16px;
   height: 16px;
-  background: var(--orange);
+  background: var(--gradient-cta);
+  border-radius: var(--round-four);
 }
 
 .hero-right {
@@ -508,6 +517,8 @@ const startSimulation = () => {
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
+  position: relative;
+  z-index: 1;
 }
 
 .logo-container {
@@ -518,35 +529,38 @@ const startSimulation = () => {
 }
 
 .hero-logo {
-  max-width: 500px; /* 调整logo大小 */
+  max-width: 500px;
   width: 100%;
 }
 
 .scroll-down-btn {
   width: 40px;
   height: 40px;
-  border: 1px solid var(--border);
+  border: 1px solid var(--md-outline-variant);
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  color: var(--orange);
+  color: var(--md-primary);
   font-size: 1.2rem;
   transition: all 0.2s;
+  border-radius: var(--round-four);
 }
 
 .scroll-down-btn:hover {
-  border-color: var(--orange);
+  border-color: var(--md-primary);
 }
 
 /* Dashboard 双栏布局 */
 .dashboard-section {
   display: flex;
   gap: 60px;
-  border-top: 1px solid var(--border);
   padding-top: 60px;
   align-items: flex-start;
+  background: var(--md-surface-container-low);
+  border-radius: var(--round-lg);
+  padding: 60px 40px;
 }
 
 .dashboard-section .left-panel,
@@ -561,28 +575,30 @@ const startSimulation = () => {
 }
 
 .panel-header {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.8rem;
-  color: #999;
+  color: var(--md-outline);
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
 }
 
 .status-dot {
-  color: var(--orange);
+  color: var(--md-primary);
   font-size: 0.8rem;
 }
 
 .section-title {
-  font-size: 2rem;
-  font-weight: 520;
+  font: var(--type-headline-lg);
+  letter-spacing: var(--tracking-display);
   margin: 0 0 15px 0;
 }
 
 .section-desc {
-  color: var(--gray-text);
+  color: var(--md-on-surface-variant);
   margin-bottom: 25px;
   line-height: 1.6;
 }
@@ -594,43 +610,51 @@ const startSimulation = () => {
 }
 
 .metric-card {
-  border: 1px solid var(--border);
+  background: var(--md-surface-container-lowest);
+  box-shadow: var(--shadow-card);
   padding: 20px 30px;
   min-width: 150px;
+  border-radius: var(--round-four);
 }
 
 .metric-value {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-size: 1.8rem;
-  font-weight: 520;
+  font-weight: 700;
   margin-bottom: 5px;
+  color: var(--md-primary);
 }
 
 .metric-label {
   font-size: 0.85rem;
-  color: #999;
+  color: var(--md-outline);
 }
 
 /* 项目模拟步骤介绍 */
 .steps-container {
-  border: 1px solid var(--border);
+  background: var(--md-surface-container-lowest);
+  box-shadow: var(--shadow-card);
   padding: 30px;
   position: relative;
+  border-radius: var(--round-four);
 }
 
 .steps-header {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.8rem;
-  color: #999;
+  color: var(--md-outline);
   margin-bottom: 25px;
   display: flex;
   align-items: center;
   gap: 8px;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
 }
 
 .diamond-icon {
   font-size: 1.2rem;
   line-height: 1;
+  color: var(--md-primary);
 }
 
 .workflow-list {
@@ -646,9 +670,9 @@ const startSimulation = () => {
 }
 
 .step-num {
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-weight: 700;
-  color: var(--black);
+  color: var(--md-on-surface);
   opacity: 0.3;
 }
 
@@ -657,14 +681,14 @@ const startSimulation = () => {
 }
 
 .step-title {
-  font-weight: 520;
+  font-weight: 600;
   font-size: 1rem;
   margin-bottom: 4px;
 }
 
 .step-desc {
   font-size: 0.85rem;
-  color: var(--gray-text);
+  color: var(--md-on-surface-variant);
 }
 
 /* 右侧交互控制台 */
@@ -673,8 +697,10 @@ const startSimulation = () => {
 }
 
 .console-box {
-  border: 1px solid #CCC; /* 外部实线 */
-  padding: 8px; /* 内边距形成双重边框感 */
+  background: var(--md-surface-container-lowest);
+  box-shadow: var(--shadow-float);
+  padding: 8px;
+  border-radius: var(--round-four);
 }
 
 .console-section {
@@ -689,13 +715,15 @@ const startSimulation = () => {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.75rem;
-  color: #666;
+  color: var(--md-on-surface-variant);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
 }
 
 .upload-zone {
-  border: 1px dashed #CCC;
+  border: 1px dashed var(--md-outline-variant);
   height: 200px;
   overflow-y: auto;
   display: flex;
@@ -703,7 +731,8 @@ const startSimulation = () => {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s;
-  background: #FAFAFA;
+  background: var(--md-surface-container-highest);
+  border-radius: var(--round-four);
 }
 
 .upload-zone.has-files {
@@ -711,8 +740,8 @@ const startSimulation = () => {
 }
 
 .upload-zone:hover {
-  background: #F0F0F0;
-  border-color: #999;
+  background: var(--md-surface-container-high);
+  border-color: var(--md-primary);
 }
 
 .upload-placeholder {
@@ -722,24 +751,26 @@ const startSimulation = () => {
 .upload-icon {
   width: 40px;
   height: 40px;
-  border: 1px solid #DDD;
+  border: 1px solid var(--md-outline-variant);
+  border-radius: var(--round-four);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 15px;
-  color: #999;
+  color: var(--md-outline);
 }
 
 .upload-title {
   font-weight: 500;
   font-size: 0.9rem;
   margin-bottom: 5px;
+  color: var(--md-on-surface);
 }
 
 .upload-hint {
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.75rem;
-  color: #999;
+  color: var(--md-outline);
 }
 
 .file-list {
@@ -753,16 +784,18 @@ const startSimulation = () => {
 .file-item {
   display: flex;
   align-items: center;
-  background: var(--white);
+  background: var(--md-surface-container-lowest);
   padding: 8px 12px;
-  border: 1px solid #EEE;
-  font-family: var(--font-mono);
+  border: 1px solid var(--md-outline-variant);
+  border-radius: var(--round-four);
+  font-family: var(--font-body);
   font-size: 0.85rem;
 }
 
 .file-name {
   flex: 1;
   margin: 0 10px;
+  color: var(--md-on-surface);
 }
 
 .remove-btn {
@@ -770,7 +803,7 @@ const startSimulation = () => {
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
-  color: #999;
+  color: var(--md-outline);
 }
 
 .console-divider {
@@ -784,21 +817,27 @@ const startSimulation = () => {
   content: '';
   flex: 1;
   height: 1px;
-  background: #EEE;
+  background: var(--md-surface-container);
 }
 
 .console-divider span {
   padding: 0 15px;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.7rem;
-  color: #BBB;
-  letter-spacing: 1px;
+  color: var(--md-outline);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
 }
 
 .input-wrapper {
   position: relative;
-  border: 1px solid #DDD;
-  background: #FAFAFA;
+  background: var(--md-surface-container-highest);
+  border-bottom: 2px solid transparent;
+  border-radius: var(--round-four) var(--round-four) 0 0;
+}
+
+.input-wrapper:focus-within {
+  border-bottom-color: var(--md-primary);
 }
 
 .code-input {
@@ -806,30 +845,33 @@ const startSimulation = () => {
   border: none;
   background: transparent;
   padding: 20px;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.9rem;
   line-height: 1.6;
   resize: vertical;
   outline: none;
   min-height: 150px;
+  color: var(--md-on-surface);
 }
 
 .model-badge {
   position: absolute;
   bottom: 10px;
   right: 15px;
-  font-family: var(--font-mono);
+  font-family: var(--font-body);
   font-size: 0.7rem;
-  color: #AAA;
+  color: var(--md-outline);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
 }
 
 .start-engine-btn {
   width: 100%;
-  background: var(--black);
-  color: var(--white);
+  background: var(--gradient-cta);
+  color: var(--md-on-primary);
   border: none;
   padding: 20px;
-  font-family: var(--font-mono);
+  font-family: var(--font-display);
   font-weight: 700;
   font-size: 1.1rem;
   display: flex;
@@ -837,22 +879,21 @@ const startSimulation = () => {
   align-items: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  letter-spacing: 1px;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
   position: relative;
   overflow: hidden;
+  border-radius: var(--round-four);
 }
 
-/* 可点击状态（非禁用） */
 .start-engine-btn:not(:disabled) {
-  background: var(--black);
-  border: 1px solid var(--black);
   animation: pulse-border 2s infinite;
 }
 
 .start-engine-btn:hover:not(:disabled) {
-  background: var(--orange);
-  border-color: var(--orange);
+  opacity: 0.9;
   transform: translateY(-2px);
+  box-shadow: var(--shadow-float);
 }
 
 .start-engine-btn:active:not(:disabled) {
@@ -860,18 +901,16 @@ const startSimulation = () => {
 }
 
 .start-engine-btn:disabled {
-  background: #E5E5E5;
-  color: #999;
+  background: var(--md-surface-container);
+  color: var(--md-outline);
   cursor: not-allowed;
   transform: none;
-  border: 1px solid #E5E5E5;
 }
 
-/* 引导动画：微妙的边框脉冲 */
 @keyframes pulse-border {
-  0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2); }
-  70% { box-shadow: 0 0 0 6px rgba(0, 0, 0, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+  0% { box-shadow: 0 0 0 0 rgba(0, 101, 141, 0.3); }
+  70% { box-shadow: 0 0 0 8px rgba(0, 101, 141, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 101, 141, 0); }
 }
 
 /* 响应式适配 */
@@ -879,16 +918,16 @@ const startSimulation = () => {
   .dashboard-section {
     flex-direction: column;
   }
-  
+
   .hero-section {
     flex-direction: column;
   }
-  
+
   .hero-left {
     padding-right: 0;
     margin-bottom: 40px;
   }
-  
+
   .hero-logo {
     max-width: 200px;
     margin-bottom: 20px;
@@ -897,57 +936,13 @@ const startSimulation = () => {
 </style>
 
 <style>
-/* English locale adjustments (unscoped to target html[lang]) */
+/* English locale adjustments (unscoped) */
 html[lang="en"] .main-title {
   font-size: 3.5rem;
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  letter-spacing: -1px;
+  letter-spacing: -0.02em;
 }
 
 html[lang="en"] .hero-desc {
   text-align: left;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  letter-spacing: 0;
-}
-
-html[lang="en"] .slogan-text {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  letter-spacing: 0;
-}
-
-html[lang="en"] .tag-row {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-html[lang="en"] .navbar .nav-links {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-/* Left pane: system status + workflow */
-html[lang="en"] .status-section {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-html[lang="en"] .status-section .status-ready {
-  font-size: 1.6rem;
-}
-
-html[lang="en"] .status-section .metric-value {
-  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 1.4rem;
-}
-
-html[lang="en"] .workflow-list .step-title {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-html[lang="en"] .workflow-list .step-desc {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  font-size: 0.72rem !important;
-  line-height: 1.4 !important;
-}
-
-html[lang="en"] .workflow-list {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 </style>
