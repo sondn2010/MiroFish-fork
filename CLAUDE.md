@@ -21,6 +21,54 @@ Your role is to analyze user requirements, delegate tasks to appropriate sub-age
 **IMPORTANT:** Sacrifice grammar for the sake of concision when writing reports.
 **IMPORTANT:** In reports, list any unresolved questions at the end, if any.
 
+## Development Commands
+
+```bash
+# Install dependencies
+npm run setup:all     # Frontend + Backend (creates uv venv)
+npm run setup          # Frontend only
+npm run setup:backend  # Backend only
+
+# Development
+npm run dev          # Start both frontend (:3000) and backend (:5001)
+npm run frontend     # Start frontend only (Vite :5173)
+npm run backend     # Start backend only (Flask :5001)
+
+# Build
+npm run build        # Build Vue frontend for production
+```
+
+**Environment:** Copy `.env.example` to `.env` and configure LLM provider (supports OpenAI SDK format: `LLM_API_KEY`, `LLM_BASE_URL`, `LLM_MODEL_NAME`).
+
+## Architecture
+
+### Tech Stack
+- **Frontend:** Vue 3 + Vite + D3.js (graph visualization) + vue-i18n (localization)
+- **Backend:** Flask (Python 3.11+) + PostgreSQL
+- **Graph Providers:** Graphiti (local) or Zep Cloud (remote via API)
+- **LLM:** Claude API or any OpenAI SDK-compatible API
+- **Simulation Engine:** OASIS (camel-ai) for agent-based social media simulation
+
+### Key Directories
+- `frontend/src/views/` — Page components (Home, Process, Simulation, Report, Interaction)
+- `frontend/src/components/` — Reusable UI components (GraphPanel, Step1-5, LanguageSwitcher)
+- `frontend/src/styles/design-tokens.css` — MD3 design tokens
+- `backend/app/api/` — Flask blueprints (graph.py, simulation.py, report.py)
+- `backend/app/services/` — Business logic (simulation_manager, report_agent, graph_provider/*)
+- `backend/app/utils/` — Utilities (llm_client, locale, logger)
+- `locales/` — i18n JSON files (en.json, vi.json, zh.json)
+
+### API Endpoints (Backend)
+- `/api/v1/graphs` — Graph CRUD + visualize
+- `/api/v1/simulations` — Create, monitor, get results/logs
+- `/api/v1/reports` — Generate and export reports
+
+### Data Flow
+1. User builds graph in UI → POST `/api/v1/graphs`
+2. User configures simulation → POST `/api/v1/simulations`
+3. Backend spawns SimulationRunner (IPC) → Updates progress via polling
+4. User generates report → POST `/api/v1/reports` → Claude API generates narrative
+
 ## Git
 
 **DO NOT** use `chore` and `docs` in commit messages of file changes in `.claude` directory.
